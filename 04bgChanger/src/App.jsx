@@ -1,40 +1,20 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 function App() {
-  const [color, setColor] = useState("olive");
-
+  const [color, setColor] = useState("bg-gray-800");
   return (
-    <div
-      className="w-full h-screen duration-200"
-      style={{ backgroundColor: color }}
-    >
-      <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
-        <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
-          <button
-            onClick={()=>setColor('orange')}
-            className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
-            style={{ backgroundColor: "orange" }}
-          >
-            orange
-          </button>
-          <button
-            onClick={()=>setColor('white')}
-            className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
-            style={{ backgroundColor: "white" }}
-          >
-            white
-          </button>
-          <button
-            onClick={()=>setColor('green')}
-            className="outline-none px-4 py-1 rounded-full text-white shadow-lg"
-            style={{ backgroundColor: "green" }}
-          >
-            green
-          </button>
+    <>
+      <div className={`${color} min-h-screen flex justify-around items-end`}>
+        <div className="flex rounded-b-2xl justify-around p-4 m-4 absolute bg-white ">
+          <button type="button" onClick={() => setColor("bg-red-500")} className="ring-2 rounded-2xl p-4 m-4 grow shadow-lg ring-red-500">Red</button>
+          <button type="button" onClick={() => setColor("bg-blue-500")} className="border-1 rounded-2xl p-4 m-4 grow shadow-lg bg-blue-500 shadow-blue-500/50">Blue</button>
+          <button type="button" onClick={() => setColor("bg-green-300")} className="ring-2 rounded-2xl p-4 m-4 grow shadow-lg ring-green-300">Green</button>
+          <button type="button" onClick={() => setColor("bg-cyan-300")} className="border-1 rounded-2xl p-4 m-4 grow shadow-lg bg-cyan-300 shadow-cyan-500/50">Cyan</button>
+          <button type="button" onClick={() => setColor("bg-sky-300")} className="ring-2 rounded-2xl p-4 m-4 grow shadow-lg ring-sky-300">sky</button>
+          <button type="button" onClick={() => setColor("bg-indigo-500")} className="border-1 rounded-2xl p-4 m-4 grow shadow-lg bg-indigo-500 shadow-indigo-500/50">Indigo</button>
         </div>
       </div>
-    </div>
-  );
+    </>
+  )
 }
-
-export default App;
+export default App
